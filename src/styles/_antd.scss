@@ -1,0 +1,102 @@
+@import "~antd/dist/antd.css";
+@import './animation.scss';
+
+p {
+    margin: 0;
+}
+.ant-input {
+    background-color: var(--chat-bg);
+    border: 0;
+    height: 38px;
+    padding: 4px 11px 6px; 
+    color: var(--text-color);
+    box-shadow: none !important;
+    &:focus {
+        border-color: var(--scrollbar-color) !important;
+    }
+  }
+.ant-modal-close-x {
+    color: var(--text-color)
+}
+.ant-form-item-control-input-content {
+    input {
+        width: 500px;
+    }
+}
+.ant-modal-title {
+    color: var(--text-color) !important;
+}
+.ant-btn-primary[disabled],
+.ant-btn-primary[disabled]:hover,
+.ant-btn-primary[disabled]:focus,
+.ant-btn-primary[disabled]:active {
+    background-color: var(--dialog--hover) !important;
+    border: none !important;
+    outline: none !important;
+    color: var(--dialog--hover) !important;
+}
+.ant-modal-footer .ant-btn:hover {
+    background: #1d75b8;
+  }
+.ant-btn-circle  {
+    background: none !important;
+    span {
+      color: var(--text-color);
+      opacity: 0.666;
+    }
+}
+.ant-empty-description {
+    color: var(--text-color);
+}
+.emoji-picker-react {
+    background: var(--chat-bg) !important; 
+}
+.ant-message {
+    color: black;
+}
+.ant-message .anticon {
+    top: -2px
+}
+.ant-message-custom-content .ant-message-error {
+    display: flex;
+    align-items: center;
+}
+.ant-modal-content, .ant-modal-header, .ant-btn, .ant-btn-primary[disabled], .ant-modal-footer {
+    background-color: var(--chat-bg);
+    border-color: var(--borders-color);
+}
+.ant-btn {
+    border: none;
+    &:hover {
+        background-color: none !important;
+    }
+    span {
+        color: var(--text-color);
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+.anticon {
+    background-color: transparent;
+    box-shadow: none;
+}
+.ant-form-item-control-input {
+  background-color: var(--chat-bg);
+}
+.ant-input-affix-wrapper , .ant-input-suffix {
+  margin: 0;
+  padding: 0;
+}
+.ant-input-prefix, .ant-input-suffix {
+  display: none;
+}
+.ant-input-affix-wrapper > input.ant-input {
+  padding: 24px 10px;
+  min-width: 320px;
+}
+button[ant-click-animating-without-extra-node]:after {
+    border: 0 none;
+    opacity: 0;
+    animation:none 0 ease 0 1 normal;
+}

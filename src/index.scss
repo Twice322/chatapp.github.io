@@ -1,0 +1,58 @@
+@import "./styles/chat";
+@import "./styles/variables";
+
+body,
+html,
+#root,
+.wrapper {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+}
+img, .message__date, .message__avatar, .chat__dialog-header-right-delete__dialog {
+  user-select: none;
+}
+:root {
+  --main-bg: #f7f7f7;
+  --chat-bg: #fff;
+  --borders-color: #f7f7f7;
+  --text-color: #202020;
+  --dialog--hover: #f3f7ff;
+  --message-partner-color: #3674ff;
+  --message-isme-color: #e8e6e6;
+  --scrollbar-color: #a5a5a5;
+  --input-border-color: #e8e6e6;
+  
+}
+
+
+
+:root[data-theme="dark"] {
+  --main-bg: #141414;
+  --chat-bg: #222222;
+  --borders-color: #181818;
+  --text-color: #ffffff;
+  --dialog--hover: #333333;
+  --message-partner-color: #50aaef;
+  --message-isme-color: #2b5278; 
+  --scrollbar-color: #1d75b8;
+  --input-border-color: #4e4e4e;
+}
+h1 {
+  margin: 0 !important;
+}
+
+body {
+  background-color: var(--main-bg) !important;
+  transition: 250ms background-color ease-out;
+  color: var(--text-color) !important
+}
+
+* {
+  outline: none;
+}
+p {
+  margin-bottom: 0;
+}

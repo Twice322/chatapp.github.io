@@ -1,0 +1,106 @@
+.chat-input {
+  width: 100%;
+  padding: 5px 0 0 0;
+  &-inner {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--input-border-color);
+    border-radius: 12px;
+    margin: 5px;
+    padding: 1px;
+  }
+  #action {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+
+    }
+  }
+  &__smile-btn {
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      font-size: 22px;
+    }
+  }
+  .ant-btn-circle {
+    opacity: 1;
+    i.anticon {
+      cursor: pointer;
+      font-size: 20px;
+    }
+    svg {
+      font-size: 22px;
+    }
+  }
+  &__emoji-picker {
+    position: absolute;
+    bottom: 50px;
+    z-index: 1;
+  }
+  &__attachments {
+    padding-top: 10px;
+    padding-left: 47px;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    justify-content: space-between;
+    margin-left: 5px;
+    &-upload-btn {
+      cursor: pointer;
+      input {
+        cursor: pointer;
+      }
+      &:hover {
+        button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  input {
+    padding: 6px 11px 8px;
+    font-size: 14px;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+.files-add {
+  position: relative;
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  svg {
+    font-size: 22px;
+  }
+}
+.files__count {
+  top: 0px;
+  right: 5px;
+  position: absolute;
+  border-radius: 50%;
+  background: #f56b6b;
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emoji__picker {
+  position: absolute;
+  bottom: 25px;
+}
+.emoji-mart {
+  background: var(--chat-bg);
+}

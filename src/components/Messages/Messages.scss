@@ -1,0 +1,20 @@
+.messages {
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  &--loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+::-webkit-scrollbar {
+  width: 0.45em;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 10px;
+}

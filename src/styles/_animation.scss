@@ -1,0 +1,42 @@
+body,
+.chat,
+.ant-input,
+.anticon,
+.ant-btn,
+.message__bubble,
+.block,
+.ant-form-item-control-input {
+    transition: 450ms all ease-out;
+
+}
+
+.chat__dialog-header {
+    transition: 450ms all ease-out;
+}
+
+.chat__sidebar-header,
+.dialogs__search,
+.chat__sidebar,
+.chat__dialog-input,
+.chat-input-inner,
+.auth__top h2 {
+    transition: 450ms border-color ease-out;
+}
+
+.message__date,
+.message__text,
+.dialogs__item-info-top,
+.chat__sidebar-header-inner,
+.ant-empty-description,
+.dialogs__search-icon,
+.ant-btn span,
+.chat__dialog-header-username,
+.chat__dialog-header-status--offline,
+.chat__dialog-header-left,
+.dialogs__item-info-top b,
+.dialogs__item-info-bottom span:first-child,
+.dialogs__item-info-bottom span:last-child, 
+.dialogs__item-info-top span
+{
+    transition: 450ms color ease-out;
+}

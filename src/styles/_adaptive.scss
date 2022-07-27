@@ -1,0 +1,70 @@
+@media only screen and (max-width: 600px) {
+    .auth {
+        .block {
+            max-width: 430px;
+        }
+    }
+    .prompt__body {
+        max-width: 350px;
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            padding-left: 0rem;
+        }
+        &__text {
+            padding: 12px 30px;
+        }
+    }
+    .ant-btn-primary {
+        background: #1d75b8;
+    }
+    .auth__register-link {
+        background: #ffffff;
+        color: black;
+        padding: 12px;
+    }
+    .avatar-upload__select {
+        width: 130px;
+        height: 130px;
+
+    }
+    .ant-form-item-control-input-content {
+        input {
+            width: 300px;
+        }
+    }
+    .chat {
+        width: 100%;
+        &__sidebar {
+            width: 100%;
+            border-right: none
+        }
+    }
+    .messages {
+        padding: 0px;
+    }
+    .message__attachments-block {
+        width: 220px;
+        height: 220px;
+    }
+    .chat__dialog-header-right__popup {
+        margin-right: 10px;
+    }
+    .modal img {
+        max-width: 350px;
+        max-height: 350px;
+    }
+    .chat__dialog {
+        &--mobile {
+            display: none;  
+            &-active {
+                display: block !important;
+            }
+        }
+    }
+}
+@media  (min-width: 700px) and (max-width: 1024px) {
+    .chat {
+        width: 100%;
+    }
+}

@@ -1,0 +1,25 @@
+.popup-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__left {
+        display: flex;
+        align-items: center; 
+        span {
+            padding-left: 7px; 
+            color: var(--text-color);
+        }
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding-left: 15px;
+    }
+}
+.customerCSS { 
+    .ant-popover-inner {
+       background-color: var(--chat-bg);
+       border-radius: 10px;
+    }
+ }

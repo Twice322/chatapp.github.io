@@ -1,0 +1,27 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba($color: #000000, $alpha: 0.75);
+    z-index: 1000;
+    &--close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 20px;
+        margin: 10px 20px;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+    }
+    img {
+        max-width: 650px;
+        max-height: 650px;
+        object-fit: contain;
+        user-select: none;
+    }
+}
