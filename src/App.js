@@ -9,11 +9,11 @@ const App = () => {
   return (
     <AuthProvider>
       <div className="wrapper">
-        <BrowserRouter>
+        <BrowserRouter basename="/Chat-App">
           <Routes>
             <Route exact path="*" element={<Auth />} />
-            <Route path="Chat-App/im" element={<Home />} />
-            <Route path="Chat-App/im/:id" element={<Home />} />
+            <Route path="/im" element={<Home />} />
+            <Route path="/im/:id" element={<Home />} />
           </Routes>
         </BrowserRouter>
       </div>

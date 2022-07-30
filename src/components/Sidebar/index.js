@@ -41,7 +41,7 @@ const Sidebar = ({
             id="logout"
             onClick={async () => {
               await logout();
-              navigate("/Chat-App");
+              navigate("/");
             }}
           />
           <Button

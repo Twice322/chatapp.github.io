@@ -98,7 +98,7 @@ const Status = () => {
       <div
         className="chat__dialog-header-left"
         onClick={() => {
-          navigate("/Chat-App/im");
+          navigate("/im");
           removeActiveClasses();
         }}
       >

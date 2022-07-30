@@ -24,7 +24,6 @@ const Dialog = ({
       userId !== partner.id
     ) {
       onChangeReadStatus(dialogId);
-      console.log(currentDialogId);
     }
     const dialogItems = document.querySelectorAll(".dialogs__item");
 
@@ -36,7 +35,7 @@ const Dialog = ({
   }, [dialogId, userId, lastMessage, partner.id, currentDialogId]);
 
   return (
-    <Link to={`/Chat-App/im/${dialogId}`} onClick={addActiveClass}>
+    <Link to={`/im/${dialogId}`} onClick={addActiveClass}>
       <div
         onClick={() => {
           updateOnlineStatus(userId, new Date().getTime());
