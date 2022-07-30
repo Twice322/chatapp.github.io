@@ -6,10 +6,11 @@ import DialogItem from "../Dialog";
 import "./Dialogs.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDialogs } from "../../redux/slices/dialogs";
+import { useAuth } from "../../firebase/components/AuthContext";
 
 const Dialogs = ({ filteredValue, onFiltered, items }) => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
+  const { user } = useAuth();
   const { status, currentDialogId } = useSelector((state) => state.dialogs);
 
   useEffect(() => {

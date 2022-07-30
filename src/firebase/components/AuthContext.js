@@ -11,8 +11,6 @@ import { db } from "../firebase";
 import { uploadFileToStorage, updateOnlineStatus } from "../../api";
 import { message } from "antd";
 import { errorMessage } from "../../utils/utils";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUserData } from "../../redux/slices/user";
 const AuthContext = React.createContext();
 
 export function useAuth() {
@@ -20,19 +18,21 @@ export function useAuth() {
 }
 
 const AuthProvider = ({ children }) => {
-  const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
+  const [user, setUser] = useState(null);
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      user && dispatch(fetchUserData(user));
+      if (user) {
+        setUser(user);
+      }
     });
     if (user) {
       updateOnlineStatus(user.uid, user.metadata.lastLoginAt);
     }
     return () => unsubscribe();
   }, [user]);
+
   async function logout() {
-    dispatch(fetchUserData(null));
+    setUser(null);
     return await auth.signOut();
   }
 
@@ -64,9 +64,7 @@ const AuthProvider = ({ children }) => {
         message.error(errorMessage(error.code.split("/")[1]));
       });
   }
-
   const value = { user, register, login, logout };
-
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 

@@ -4,9 +4,10 @@ import { findUserByUsername } from "../api";
 import { useSelector } from "react-redux";
 import { message } from "antd";
 import SideBarItem from "../components/Sidebar";
+import { useAuth } from "../firebase/components/AuthContext";
 
 const SideBar = () => {
-  const { user } = useSelector((state) => state.user);
+  const { user } = useAuth();
   const { items } = useSelector((state) => state.dialogs);
 
   const [visible, setVisible] = useState(false);

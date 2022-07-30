@@ -8,24 +8,20 @@ import { setCurrentDialogId } from "../../redux/slices/dialogs";
 import { Empty } from "antd";
 import classNames from "classnames";
 import "./Home.scss";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../../firebase/components/AuthContext";
 
 const Home = () => {
-  const { user } = useSelector((state) => state.user);
   const { currentDialogId } = useSelector((state) => state.dialogs);
+  const { user } = useAuth();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [width, setWidth] = useState(window.innerWidth);
+  const location = useLocation();
 
   useEffect(() => {
-    dispatch(
-      setCurrentDialogId(
-        window.location.pathname.split("/").pop() !== "im"
-          ? window.location.pathname.split("/").pop()
-          : null
-      )
-    );
-  }, [window.location.pathname]);
+    const dialogId = window.location.pathname.split(/im/).pop().slice(1);
+    dispatch(setCurrentDialogId(dialogId));
+  }, [location]);
 
   window.addEventListener("resize", () => {
     setWidth(window.innerWidth);

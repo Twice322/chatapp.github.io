@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadFileToStorage } from "../api";
 import { ChatInput as ChatInputItem } from "../components/ChatInput";
+import { useAuth } from "../firebase/components/AuthContext";
 import { fetchSendMessage } from "../redux/slices/messages";
 
 const ChatInput = () => {
   const [value, setValue] = useState("");
-  const { user } = useSelector((state) => state.user);
+  const { user } = useAuth();
   const { currentDialogId } = useSelector((state) => state.dialogs);
 
   const dispatch = useDispatch();

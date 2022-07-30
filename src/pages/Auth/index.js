@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import { useAuth } from "../../firebase/components/AuthContext";
 import LoginFormWrapper from "../../modules/formikWrappers/LoginFormWrapper";
 import RegisterFormWrapper from "../../modules/formikWrappers/RegisterFormWrapper";
 import "./Auth.scss";
 
 const Auth = () => {
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.user);
+  const { user } = useAuth();
   useEffect(() => {
     if (user) {
       navigate("Chat-App/im");
     }
-  }, [user]);
+  }, [user, navigate]);
   return (
     !user &&
     !false && (

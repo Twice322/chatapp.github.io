@@ -9,6 +9,7 @@ import Prompt from "../Prompt";
 import Time from "../Time";
 import Avatar from "../Avatar";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../firebase/components/AuthContext";
 
 const PopUpMod = ({ children, setPromptIsOpened }) => {
   const [visible, setVisible] = useState(false);
@@ -45,12 +46,10 @@ const Status = () => {
   const { items: dialogs, currentDialogId } = useSelector(
     (state) => state.dialogs
   );
-  const { user } = useSelector((state) => state.user);
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [promptIsOpened, setPromptIsOpened] = useState(false);
-
   const [time, setTime] = useState(0);
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

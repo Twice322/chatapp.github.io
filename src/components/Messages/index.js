@@ -6,12 +6,12 @@ import { LoadingOutlined } from "@ant-design/icons";
 import Message from "../../components/Message";
 import { fetchMessages } from "../../redux/slices/messages";
 import "./Messages.scss";
+import { useAuth } from "../../firebase/components/AuthContext";
 
 const Messages = () => {
-  const { user } = useSelector((state) => state.user);
   const { currentDialogId } = useSelector((state) => state.dialogs);
   const { items, status } = useSelector((state) => state.messages);
-
+  const { user } = useAuth();
   const dispatch = useDispatch();
   useEffect(() => {
     currentDialogId && dispatch(fetchMessages(currentDialogId));
